@@ -27,6 +27,7 @@ import JsonView from '@uiw/react-json-view';
 import init, { parse, tokenize } from "../pkg/index";
 import { lyql } from "./parser";
 import "./lyqlSyntax.scss";
+import { jsonViewStyle } from "./jsonViewTheme"
 
 await init();
 
@@ -145,7 +146,7 @@ const MainView = ({
             </div>
             <Separator />
             <TabsContent value="ast" className="m-0 p-4">
-              <JsonView value={ast} />
+              <JsonView value={ast}  style={jsonViewStyle} />
             </TabsContent>
             <TabsContent value="plan" className="m-0">
             </TabsContent>
