@@ -42,7 +42,6 @@ const MainView = ({
 
   const [ast, setAst] = React.useState({});
 
-
   function updateCode(code: string) {
     setCode(code)
     try {
@@ -63,7 +62,7 @@ const MainView = ({
             sizes
           )}`
         }}
-        className="h-full max-h-[800px] items-stretch"
+        className="h-full max-h-[800px] items-stretch dark"
       >
         <ResizablePanel
           defaultSize={defaultLayout[0]}
@@ -115,7 +114,7 @@ const MainView = ({
               <h1 className="text-xl font-bold">Code</h1>
             </div>
             <Separator />
-            <TabsContent value="code" className="m-0 p-4">
+            <TabsContent value="code" className="m-0">
               <CodeMirror
                 value={code}
                 extensions={[lyql(tokenize)]} 
@@ -156,5 +155,4 @@ const MainView = ({
     </TooltipProvider>
   )
 }
-
 export default MainView

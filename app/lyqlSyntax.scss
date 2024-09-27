@@ -5,6 +5,7 @@
         font-size: $font-size;
         font-family: $font-family;
         border: none!important;
+        background-color: transparent;
     }
 
     &line {
@@ -16,27 +17,27 @@
     }
 
     &string {
-        color:rgb(17, 198, 0)
+        color: #a5d6a7;
     }
 
     &number,
     &boolean,
     &null-undefined {
-        color:rgb(94, 145, 255)
+        color: #81a2be;
     }
     &identifier {
-        color:#bbdf06;
-        text-decoration: underline
+        color: #c5e1a5;
+        text-decoration: none;
     }
-    &keyword{
-        color: rgb(122, 255, 228);
+    &keyword {
+        color: #b39ddb;
         font-weight: bold;
     }
-    &sqlkeyword{
-        color: #027e44;
+    &sqlkeyword {
+        color: #4db6ac;
         font-weight: bold;
     }
     &symbol {
-        color: grey
+        color: #b0bec5;
     }
 }
