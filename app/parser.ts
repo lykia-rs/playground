@@ -21,11 +21,13 @@ import {
 
   export const jsHighlight = styleTags(tgs)
 
+  type Token = { span: { start: number, end: number } }
+
   function convertParsedToLezer(node: any) {
     if (!node.span) {
       return Tree.empty;
     }
-    const children = (node.children || []).toSorted((a: any, b: any) => a.span.start - b.span.start);
+    const children = (node.children || []).toSorted((a: Token, b: Token) => a.span.start - b.span.start);
     return new Tree(
       NodeType.define({
         id: 0,
@@ -34,7 +36,7 @@ import {
         props: [jsHighlight],
       }),
       children.map(convertParsedToLezer),
-      children.map((item) => item.span.start - node.span.start),
+      children.map((item: Token) => (item.span.start - node.span.start)),
       node.span.end - node.span.start
     );
   }

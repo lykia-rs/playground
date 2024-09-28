@@ -22,12 +22,12 @@ import {
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Nav } from "./nav"
 
-import CodeMirror from '@uiw/react-codemirror';
-import JsonView from '@uiw/react-json-view';
-import init, { parse, tokenize } from "../pkg/index";
-import { lyql } from "./parser";
-import "./lyqlSyntax.scss";
-import { jsonViewStyle } from "./jsonViewTheme"
+import CodeMirror from '@uiw/react-codemirror'
+import JsonView from '@uiw/react-json-view'
+import init, { parse, tokenize } from "../pkg/index"
+import { lyql } from "./parser"
+import "../styles/syntax-highlight.scss"
+import { jsonViewStyle } from "../styles/json-view-theme"
 
 await init();
 
@@ -112,7 +112,7 @@ const MainView = ({
         <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
           <Tabs defaultValue="code">
             <div className="flex items-center px-4 py-3">
-              <h1 className="text-xl font-bold">Code</h1>
+              <h1 className="text-xl font-bold">Query</h1>
             </div>
             <Separator />
             <TabsContent value="code" className="m-0">
